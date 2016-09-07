@@ -47,3 +47,7 @@ export function renderErrorsFor(errors, ref) {
     }
   });
 }
+
+export function setDocumentTitle(title) {
+  document.title = `${title} | Phoenix Trello`;
+}

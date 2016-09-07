@@ -5,7 +5,7 @@ import RegistrationsNew       from '../views/registrations/new';
 import AuthenticatedContainer from '../containers/authenticated';
 import HomeIndexView          from '../views/home';
 import SessionsNew            from '../views/sessions/new';
-import BoardsShowView         from '../view/boards/show';
+import BoardsShowView         from '../views/boards/show';
 
 export default (
   <Route component={ MainLayout }>

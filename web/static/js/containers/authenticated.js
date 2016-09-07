@@ -1,6 +1,6 @@
 import React        from 'react';
 import { connect }  from 'react-redux';
-import { routeActions } from 'react-router-redux';
+import { routerActions } from 'react-router-redux';
 
 class AuthenticatedContainer extends React.Component {
   componentDidMount() {
@@ -9,16 +9,18 @@ class AuthenticatedContainer extends React.Component {
     if (localStorage.getItem('phoenixAuthToken')) {
       dispatch(Actions.currentUser());
     } else {
-      dispatch(routeActions.push('/sign_up'));
+      dispatch(routerActions.push('/sign_up'));
     }
   }
 
   render() {
-
+    return (
+      <div>AuthenticatedContainer</div>
+    );
   }
 }
 
-const mapStateToProps = (state) ({
+const mapStateToProps = (state) => ({
   currentUser: state.session.currentUser
 });
 
