@@ -18,3 +18,7 @@ erl_crash.dump
 node_modules
 npm-debug.log
 config/dev.exs
+priv/static/js/application.js
+priv/static/js/application.js.map
+priv/static/css/application.css
+priv/static/css/application.css.map
