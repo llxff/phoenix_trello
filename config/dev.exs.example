@@ -40,5 +40,5 @@ config :phoenix_trello, PhoenixTrello.Repo,
   adapter: Ecto.Adapters.Postgres,
   username: "postgres",
   database: "phoenix_trello_dev",
-  hostname: "192.168.56.102",
+  hostname: "localhost",
   pool_size: 10
