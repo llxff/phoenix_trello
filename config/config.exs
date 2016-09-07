@@ -22,7 +22,7 @@ config :logger, :console,
   format: "$time $metadata[$level] $message\n",
   metadata: [:request_id]
 
-config :guardian, Guardian do
+config :guardian, Guardian,
   issuer: "PhoenixTrello",
   ttl: { 3, :days },
   verify_issuer: true,

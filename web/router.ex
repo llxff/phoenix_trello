@@ -10,7 +10,7 @@ defmodule PhoenixTrello.Router do
   end
 
   pipeline :api do
-    plug :accpets, ["json"]
+    plug :accepts, ["json"]
   end
 
   scope "/", PhoenixTrello do
