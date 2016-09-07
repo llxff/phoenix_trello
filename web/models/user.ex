@@ -11,6 +11,8 @@ defmodule PhoenixTrello.User do
     timestamps()
   end
 
+  @derive { Poison.Encoder, only: [:id, :first_name, :last_name, :email] }
+
   @required_fields [:first_name, :last_name, :email, :password]
 
   def changeset(struct, params \\ %{}) do
