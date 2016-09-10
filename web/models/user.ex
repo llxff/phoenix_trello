@@ -2,6 +2,8 @@ defmodule PhoenixTrello.User do
   use PhoenixTrello.Web, :model
 
   schema "users" do
+    has_many :owned_boards, PhoenixTrello.Board
+
     field :first_name, :string
     field :last_name, :string
     field :email, :string
