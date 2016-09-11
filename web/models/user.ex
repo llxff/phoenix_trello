@@ -3,6 +3,8 @@ defmodule PhoenixTrello.User do
 
   schema "users" do
     has_many :owned_boards, PhoenixTrello.Board
+    has_many :user_boards, UserBoard
+    has_many :boards, through: [:user_borads, :board]
 
     field :first_name, :string
     field :last_name, :string

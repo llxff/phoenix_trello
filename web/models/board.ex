@@ -6,6 +6,9 @@ defmodule PhoenixTrello.Board do
   @derive { Poison.Encoder, only: [:id, :name, :user] }
 
   schema "boards" do
+    has_many :user_boards, UserBoard
+    has_many :members, through: [:user_boards, :user]
+
     field :name, :string
     belongs_to :user, User
 
