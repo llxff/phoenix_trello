@@ -30,7 +30,7 @@ export default function reducer(state = initialState, action = {}) {
       const { invitedBoards } = state;
 
       return { ...state, invitedBoards: [action.board].concat(invitedBoards) };
-      
+
     default:
       return state;
   }
