@@ -25,6 +25,13 @@ const Actions = {
           user: msg.user
         });
       });
+
+      channel.on('user:joined', (msg) => {
+        dispatch({
+          type: Constants.CURRENT_BOARD_CONNECTED_TO_USERS,
+          users: msg.users
+        })
+      })
     };
   },
 
