@@ -51,4 +51,13 @@ defmodule PhoenixTrello.BoardChannel do
       |> assoc(:boards)
       |> Repo.get(board_id)
   end
+
+  def terminate(_reason, socket) do
+    board_id = Board.slug_id(socket.assigns.board)
+    user_id = socket.assigns.current_user.id
+
+    broadcast!(socket, "user:left", %{users: Monitor.user_left(board_id, user_id)})
+
+    :ok
+  end
 end
