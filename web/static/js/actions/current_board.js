@@ -31,7 +31,14 @@ const Actions = {
           type: Constants.CURRENT_BOARD_CONNECTED_TO_USERS,
           users: msg.users
         })
-      })
+      });
+
+      channel.on('user:left', (msg) => {
+        dispatch({
+          type: Constants.CURRENT_BOARD_CONNECTED_USERS,
+          users: msg.users
+        });
+      });
     };
   },
 
