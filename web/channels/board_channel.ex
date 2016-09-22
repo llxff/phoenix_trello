@@ -21,7 +21,7 @@ defmodule PhoenixTrello.BoardChannel do
     {:noreply, socket}
   end
 
-  def handle_in("members:add", %{"email" => emal}, socket) do
+  def handle_in("members:add", %{"email" => email}, socket) do
     try do
       board = socket.assigns.board
       user = User
