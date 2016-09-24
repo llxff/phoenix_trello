@@ -17,7 +17,7 @@ defmodule PhoenixTrello.BoardController do
   end
 
   def create(conn, %{"board" => board_params}) do
-    current_user - Guardian.Plug.current_resource(conn)
+    current_user = Guardian.Plug.current_resource(conn)
 
     changeset = current_user
       |> build_assoc(:owned_boards)
