@@ -1,7 +1,7 @@
 defmodule PhoenixTrello.Board do
   use PhoenixTrello.Web, :model
 
-  alias __MODULE__
+  alias PhoenixTrello.{UserBoard, User}
 
   @derive { Poison.Encoder, only: [:id, :name, :user] }
 
