@@ -41,6 +41,22 @@ class BoardsShowView extends React.Component {
     );
   }
 
+  _renderLists() {
+    const { list, channel, id, addingNewCardInListId } = this.props.currentBoard;
+
+    return lists.map((list) => {
+      return (
+        <ListCard
+          key={list.id}
+          boardId={id}
+          dispatch={this.props.dispatch}
+          channel={channel}
+          isAddingNewCard={addingNewCardInListId === list.id}
+          {...list} />
+      );
+    });
+  }
+
   render() {
     const { fetching, name } = this.props.currentBoard;
 
@@ -59,10 +75,12 @@ class BoardsShowView extends React.Component {
         <div className="canvas-wrapper">
           <div className="canvas">
             <div className="lists-wrapper">
-              { ::this._renderAddNewList() }
+              {::this._renderLists()}
+              {::this._renderAddNewList()}
             </div>
           </div>
         </div>
+        {this.props.children}
       </div>
     );
   }
