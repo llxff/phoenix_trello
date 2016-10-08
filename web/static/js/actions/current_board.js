@@ -39,6 +39,13 @@ const Actions = {
           users: msg.users
         });
       });
+
+      channel.on('list:created', (msg) => {
+        dispatch({
+          type: Constants.CURRENT_BOARD_LIST_CREATED,
+          list: msg.list
+        });
+      });
     };
   },
 
