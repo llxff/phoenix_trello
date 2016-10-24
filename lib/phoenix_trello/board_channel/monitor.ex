@@ -5,11 +5,11 @@ defmodule PhoenixTrello.BoardChannel.Monitor do
     GenServer.start_link(__MODULE__, initial_state, name: __MODULE__)
   end
 
-  def member_joined(board, member) do
+  def user_joined(board, member) do
     GenServer.call(__MODULE__, {:member_joined, board, member})
   end
 
-  def member_left(board, member) do
+  def user_left(board, member) do
     GenServer.call(__MODULE__, {:member_left, board, member})
   end
 
