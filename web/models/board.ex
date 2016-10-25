@@ -20,4 +20,8 @@ defmodule PhoenixTrello.Board do
     |> cast(params, [:name, :user_id])
     |> validate_required([:name, :user_id])
   end
+
+  def slug_id(board) do
+    "#{ board.id }"
+  end
 end

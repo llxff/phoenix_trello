@@ -15,4 +15,10 @@ defmodule PhoenixTrello.BoardTest do
     changeset = Board.changeset(%Board{}, @invalid_attrs)
     refute changeset.valid?
   end
+
+  test ".slug_id" do
+    board = %Board{id: 1}
+
+    assert Board.slug_id(board) == "1"
+  end
 end
