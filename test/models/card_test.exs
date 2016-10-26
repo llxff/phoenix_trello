@@ -3,7 +3,7 @@ defmodule PhoenixTrello.CardTest do
 
   alias PhoenixTrello.Card
 
-  @valid_attrs %{name: "some content"}
+  @valid_attrs %{name: "some content", list_id: 2}
   @invalid_attrs %{}
 
   test "changeset with valid attributes" do
